@@ -8,7 +8,7 @@ Búsqueda en documento específico o en toda la colección
 Normalización de texto (minúsculas, sin acentos)
 Cache integrado para mejor rendimiento
 Logs estructurados para monitoreo
-Deployment ready con Docker y Heroku
+Deployment ready con  Heroku
 Escalable y preparado para alta disponibilidad
 
 📋 Endpoints
@@ -27,20 +27,7 @@ GET /health
 # Estadísticas del sistema
 GET /stats
 
-# Listar documentos disponibles
-GET /documents
-🏗️ Arquitectura
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Load Balancer │────│   Flask API     │────│   Document      │
-│   (nginx/ALB)   │    │   + Cache       │    │   Processor     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-                                │                        │
-                                │                        │
-                       ┌─────────────────┐    ┌─────────────────┐
-                       │   Monitoring    │    │   File Storage  │
-                       │   (Logs/Health) │    │   (Documents)   │
-                       └─────────────────┘    └─────────────────┘
-Componentes
+
 
 API Layer: Flask con endpoints RESTful
 Processing Layer: Clase DocumentProcessor para análisis de texto
